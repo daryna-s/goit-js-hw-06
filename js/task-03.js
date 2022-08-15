@@ -12,3 +12,23 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const makeMarkup = images => {
+  const { url, alt } = images;
+
+  return `
+<li class= "item">
+<img src = ${ url} alt = ${alt}>
+</li>`;
+};
+
+const liEl = document.querySelector('.gallery');
+const transactionMarkup = images
+  .map(makeMarkup)
+  .join('');
+
+liEl.insertAdjacentHTML('beforeend', transactionMarkup);
+
+console.log(transactionMarkup);
+
