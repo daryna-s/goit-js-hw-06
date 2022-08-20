@@ -17,10 +17,7 @@ const images = [
 const makeMarkup = images => {
   const { url, alt } = images;
 
-  return `
-<li class= "item">
-<img src = ${ url} alt = ${alt}>
-</li>`;
+  return `<li><img src = ${ url} alt = ${alt} width = "200"></li>`;
 };
 
 const liEl = document.querySelector('.gallery');
@@ -31,4 +28,20 @@ const transactionMarkup = images
 liEl.insertAdjacentHTML('beforeend', transactionMarkup);
 
 console.log(transactionMarkup);
+
+
+liEl.style.display = `flex`;
+liEl.style.justifyContent = `center`;
+liEl.style.alignItems = `center`;
+liEl.style.listStyle = `none`;
+
+const menuItemsByTagName = document.querySelectorAll("li");
+console.log(menuItemsByTagName);
+
+const a = menuItemsByTagName.length - 1;
+console.log(a);
+
+for (let i = 0; i < a; i += 1) {
+  menuItemsByTagName[i].style.marginRight = `30px`;
+}
 
